@@ -13,12 +13,12 @@
 
         <nav class="nav-menu float-right d-none d-lg-block">
           <ul>
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">Features</a></li>
-            <li><a href="services.html">Preview</a></li>
-            <li><a href="contact.html">Details</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html">Demo</a></li>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Preview</a></li>
+            <li><a href="#">Details</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Demo</a></li>
             <li>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
             </li>
@@ -123,3 +123,31 @@
   </div>
   <!-- End Header -->
 </template>
+<script>
+import $ from "jquery";
+
+export default {
+  created() {
+    this.addClass();
+  },
+  methods: {
+    addClass() {
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+          $("#header").addClass("header-scrolled");
+        } else {
+          $("#header").removeClass("header-scrolled");
+        }
+      });
+    },
+  },
+};
+</script>
+
+<style>
+#header.header-scrolled {
+  background: rgba(30, 67, 86, 0.8);
+  height: 60px;
+  padding: 10px 0;
+}
+</style>
